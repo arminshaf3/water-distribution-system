@@ -1,0 +1,10 @@
+{
+  "buildCommand": "npm --prefix admin-dashboard install && npm --prefix admin-dashboard run build",
+  "outputDirectory": "admin-dashboard/dist",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

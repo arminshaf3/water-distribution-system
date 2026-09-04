@@ -1,0 +1,19 @@
+﻿services:
+  # AquaDistribute Full-Stack (Spring Boot REST API + Embedded React Admin Dashboard)
+  - type: web
+    name: aquadistribute-system
+    env: docker
+    dockerfilePath: ./backend/Dockerfile
+    plan: free
+    region: singapore
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: supabase
+      - key: SPRING_DATASOURCE_URL
+        value: jdbc:postgresql://db.sblbjcccxwffdhbcisoi.supabase.co:5432/postgres?sslmode=require
+      - key: SPRING_DATASOURCE_USERNAME
+        value: postgres
+      - key: SPRING_DATASOURCE_PASSWORD
+        value: 351264.aAbc
+      - key: PORT
+        value: 8080

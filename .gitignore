@@ -1,0 +1,44 @@
+﻿# Node / Vite
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Java / Maven
+target/
+*.jar
+*.war
+.mvn/
+backend/data/
+*.db
+*.mv.db
+*.trace.db
+*.lock.db
+
+# Flutter / Android
+.dart-local/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+build/
+android/.gradle/
+android/app/build/
+android/local.properties
+ios/Pods/
+ios/.symlinks/
+
+# IDE / OS
+.idea/
+.vscode/
+*.suo
+*.user
+*.useroscan
+*.sln.docstates
+.DS_Store
+Thumbs.db
+*.log
+
+# Binaries & APKs
+apk-output/
+*.apk
