@@ -1,21 +1,24 @@
 ﻿spring:
   datasource:
-    url: ${SUPABASE_DB_URL:${SPRING_DATASOURCE_URL:jdbc:postgresql://db.sblbjcccxwffdhbcisoi.supabase.co:5432/postgres?sslmode=require}}
-    username: ${SUPABASE_DB_USER:${SPRING_DATASOURCE_USERNAME:postgres}}
+    url: ${SUPABASE_DB_URL:${SPRING_DATASOURCE_URL:jdbc:postgresql://aws-0-ap-northeast-2.pooler.supabase.com:5432/postgres?sslmode=require&tcpKeepAlive=true}}
+    username: ${SUPABASE_DB_USER:${SPRING_DATASOURCE_USERNAME:postgres.sblbjcccxwffdhbcisoi}}
     password: ${SUPABASE_DB_PASSWORD:${SPRING_DATASOURCE_PASSWORD:351264.aAbc}}
     driver-class-name: org.postgresql.Driver
     hikari:
-      maximum-pool-size: 10
-      minimum-idle: 2
+      maximum-pool-size: 5
+      minimum-idle: 1
       idle-timeout: 30000
-      connection-timeout: 20000
-      max-lifetime: 1800000
+      connection-timeout: 10000
+      max-lifetime: 60000
+      keepalive-time: 30000
+      validation-timeout: 3000
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: false
     properties:
       hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: false
   flyway:
     enabled: false
